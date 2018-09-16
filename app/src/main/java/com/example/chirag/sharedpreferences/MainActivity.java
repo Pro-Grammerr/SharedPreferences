@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Getting shared prefs value using the SharedPreferences object.
         final SharedPreferences prefs = MainActivity.this.getSharedPreferences(Keys.PREFS_KEY, Context.MODE_PRIVATE);
-        final int cnt = prefs.getInt(Keys.COUNT, 0);
+        final int count = prefs.getInt(Keys.COUNT, 0);
 
         //Displaying the shared preferences value.
-        countTv.setText("Shared Prefs Value - "+ String.valueOf(cnt));
+        countTv.setText("Shared Prefs Value - " + String.valueOf(count));
 
         increment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 //Incrementing the shared prefs, storing it and updating display.
                 prefs.edit().putInt(Keys.COUNT, (value+1)).apply();
                 int refreshedValue = prefs.getInt(Keys.COUNT, 0);
-                countTv.setText("Shared Prefs Value - "+ String.valueOf(refreshedValue));
+                countTv.setText("Shared Prefs Value - " + String.valueOf(refreshedValue));
             }
         });
 
